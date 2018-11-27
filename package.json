@@ -1,0 +1,45 @@
+{
+  "name": "expresspractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "set DEBUG=app,app:* & nodemon app.js --exec babel-node",
+    "build": "babel server -d server/dist --ignore server/dist",
+    "serve": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/angular": "^1.6.51",
+    "@types/angular-animate": "^1.5.10",
+    "@types/angular-loading-bar": "0.0.35",
+    "@types/angular-ui-bootstrap": "^0.13.47",
+    "@types/angular-ui-router": "^1.1.40",
+    "@types/bootstrap": "^4.1.2",
+    "@types/toastr": "^2.1.35",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "debug": "^4.1.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.3.11",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.4",
+    "nodemon": "^1.18.6",
+    "require": "^2.4.20",
+    "sequelize": "^4.41.2"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500"
+  }
+}
