@@ -5,16 +5,15 @@ var App;
     (function (Routes) {
         var config = function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/login');
-            $stateProvider
-                .state('login', {
+            $stateProvider.state('login', {
                 url: '/login',
-                templateUrl: '../templates/account/login.html',
+                templateUrl: '../templates/accounts/login.html',
                 controller: 'LoginCtrl',
-                controllerAs: 'model'
+                controllerAs: 'model',
             })
                 .state('register', {
                 url: '/register',
-                templateUrl: '../templates/account/register.html',
+                templateUrl: '../templates/accounts/register.html',
                 controller: 'RegisterCtrl',
                 controllerAs: 'model'
             });

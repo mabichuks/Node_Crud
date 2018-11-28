@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api/v1', index);
 app.use('/', express.static('ui'));
+app.use('/account', express.static('./ui/account.html'));
 
 app.listen(port, () => {
     console.log(`App started on port ${port}`);

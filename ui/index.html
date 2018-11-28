@@ -47,36 +47,25 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
-                    <a href="dashboard.html">
+                <li ui-sref-active="current">
+                    <a ui-sref = 'home'>
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
-                        <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                    <a ui-sref="employees">
+                        <i class="pe-7s-users"></i>
+                        <p>Employees</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                    <a ui-sref= 'companies'>
+                        <i class="pe-7s-home"></i>
+                        <p>Companies</p>
                     </a>
                 </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
+
             </ul>
     	</div>
     </div>
@@ -119,7 +108,7 @@
         <div class="content">
             <div class="container-fluid">
                 <!--Include content here-->
-                <div ui-view class="view-frame"></div>
+                <div ui-view></div>
             </div>
         </div>
 
@@ -168,11 +157,11 @@
     <script src="./libs/angular/angular.js"></script>
     <script src="./libs/angular-loading-bar/build/loading-bar.min.js"></script>
     <script src="./libs/angular-animate/angular-animate.js"></script>
-    <script src="./libs/angular-ui-router//release/angular-ui-router.js"></script>
+    <script src="./libs/angular-ui-router/release/angular-ui-router.js"></script>
 
     <!-- Application -->
 
     <script src="./js/app.js"></script>
-    <script src="./js/home/controller.js"></script>
-    <script src="./js/home/routes.js"></script>
+    <script src="./js/controllers/controllers.js"></script>
+    <script src="./js/routes/routes.js"></script>
 </html>
