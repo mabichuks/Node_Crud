@@ -1,5 +1,5 @@
 <div class="well" style="margin-top:100px">
-
+<h1>Login</h1>
         <!-- Text input-->
         <form class="form-horizontal" action=" " method="post" id="contact_form">
 
@@ -8,7 +8,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input name="user_name" id="username" placeholder="Username" class="form-control" type="text">
+                        <input name="user_name" placeholder="Username" class="form-control" type="text" ng-model= 'user.username'>
                     </div>
                 </div>
             </div>
@@ -20,15 +20,15 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                        <input name="user_password" id="password" placeholder="Password" class="form-control" type="password">
+                        <input name="user_password" id="password" placeholder="Password" class="form-control" type="password" ng-model= 'user.password'>
                     </div>
                 </div>
             </div>
         </form>
         <!-- Button -->
         <div style="padding-left:280px">
-            <input type="submit" id="btnRegister" value="Register" class="btn btn-warning" />
+            <a ui-sref='register' id="btnRegister" class="btn btn-warning">Register</a>
             -or-
-            <input type="button" id="btnlogin" value="Login" class="btn btn-primary" />
+            <input type='submit' value="Login" class="btn btn-primary" ng-click= 'model.login(user)' />
         </div>
 </div>

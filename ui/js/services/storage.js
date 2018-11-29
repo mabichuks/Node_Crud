@@ -13,6 +13,9 @@ var App;
                 var result = window.localStorage.getItem(key);
                 return JSON.parse(result || 'null');
             };
+            StorageService.prototype.clear = function (key) {
+                return window.localStorage.removeItem(key);
+            };
             return StorageService;
         }());
         Services.StorageService = StorageService;

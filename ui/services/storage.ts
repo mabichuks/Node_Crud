@@ -10,6 +10,10 @@ module App.Services {
             var result = window.localStorage.getItem(key);
             return JSON.parse(result || 'null');
         }
+
+        clear(key: string) {
+            return window.localStorage.removeItem(key);
+        }
     }
 
     App.module.service('_storage', StorageService);

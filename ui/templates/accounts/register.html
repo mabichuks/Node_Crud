@@ -1,1 +1,47 @@
-<h1>Register Works!</h1>
+<div class="well" style="margin-top:100px">
+<h1>Register</h1>
+        <!-- Text input-->
+        <form class="form-horizontal">
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Username</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input name="user_name"  placeholder="Username" class="form-control" type="text" ng-model = 'user.username'>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Password</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        <input name="user_password"  placeholder="Password" class="form-control" type="password" ng-model= 'user.password'>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Confirm Password</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        <input name="user_password"  placeholder="Confirm Password" class="form-control" type="password" ng-model= 'user.confirmPassword'>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Button -->
+        <div style="padding-left:280px">
+            <a ui-sref='login'  class="btn btn-warning"><i class="fa fa-arrow-left"></i> Login</a>
+            -or-
+            <input class="btn btn-info" type="submit" value="Register" ng-click= 'model.register(user)'>
+        </div>
+</div>

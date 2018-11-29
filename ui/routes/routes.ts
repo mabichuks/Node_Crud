@@ -22,12 +22,6 @@ module App.Routes {
                 controller: 'CompanyCtrl',
                 controllerAs: 'model'
             })
-            .state('addCompany', {
-                url: '/addCompany',
-                templateUrl: '../templates/company/addCompany.html',
-                controller: 'CompanyCtrl',
-                controllerAs: 'model'
-            })
             .state('home', {
                 url: '/',
                 templateUrl: '../templates/home/home.html',

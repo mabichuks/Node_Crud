@@ -9,9 +9,9 @@ var App;
                 this.http = $http;
                 this.notify = _notify;
             }
-            DataService.prototype.get = function (url) {
+            DataService.prototype.get = function (url, config) {
                 var defer = this.Q.defer();
-                var getData = this.http.get(url);
+                var getData = this.http.get(url, config);
                 var notify = this.notify;
                 //On Success
                 getData.then(function (response) {
@@ -26,9 +26,9 @@ var App;
                 });
                 return defer.promise;
             };
-            DataService.prototype.post = function (url, data) {
+            DataService.prototype.post = function (url, data, config) {
                 var defer = this.Q.defer();
-                var postData = this.http.post(url, data);
+                var postData = this.http.post(url, data, config);
                 var notify = this.notify;
                 //on success
                 postData.then(function (response) {
@@ -43,9 +43,9 @@ var App;
                 });
                 return defer.promise;
             };
-            DataService.prototype.put = function (url, data) {
+            DataService.prototype.put = function (url, data, config) {
                 var defer = this.Q.defer();
-                var putData = this.http.put(url, data);
+                var putData = this.http.put(url, data, config);
                 var notify = this.notify;
                 putData.then(function (response) {
                     if (response) {
@@ -58,9 +58,9 @@ var App;
                 });
                 return defer.promise;
             };
-            DataService.prototype.delete = function (url) {
+            DataService.prototype.delete = function (url, config) {
                 var defer = this.Q.defer();
-                var deleteData = this.http.delete(url);
+                var deleteData = this.http.delete(url, config);
                 var notify = this.notify;
                 //on success
                 deleteData.then(function (response) {

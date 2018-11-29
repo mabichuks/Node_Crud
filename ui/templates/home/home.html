@@ -1,1 +1,34 @@
-<h1>{{model.message}}</h1>
+<div ng-init="model.getCount()">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="dash-box dash-box-color-1">
+				<div class="dash-box-icon">
+					<i class="pe-7s-users"></i>
+				</div>
+				<div class="dash-box-body">
+					<span class="dash-box-count">{{model.companyCount}}</span>
+					<span class="dash-box-title">Companies</span>
+				</div>
+				
+				<div class="dash-box-action">
+					<button ng-click="model.company()">More Info</button>
+				</div>				
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="dash-box dash-box-color-2">
+				<div class="dash-box-icon">
+					<i class="pe-7s-home"></i>
+				</div>
+				<div class="dash-box-body">
+					<span class="dash-box-count">{{model.employeeCount}}</span>
+					<span class="dash-box-title">Employees</span>
+				</div>
+				
+				<div class="dash-box-action">
+					<button ng-click="model.employee()">More Info</button>
+				</div>				
+			</div>
+		</div>
+	</div>
+</div>

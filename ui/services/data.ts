@@ -12,10 +12,10 @@ module App.Services {
             this.notify = _notify;
         }
 
-        get<T>(url: string) {
+        get<T>(url: string, config: {}) {
 
             var defer = this.Q.defer<T>();
-            var getData = this.http.get<T>(url);
+            var getData = this.http.get<T>(url, config);
             var notify = this.notify;
 
             //On Success
@@ -34,10 +34,9 @@ module App.Services {
             return defer.promise;
         }
 
-        post<T>(url: string, data: {}):ng.IPromise<T> {
-
+        post<T>(url: string, data: {}, config: {}):ng.IPromise<T> {
             var defer = this.Q.defer<T>();
-            var postData = this.http.post<T>(url, data);
+            var postData = this.http.post<T>(url, data, config);
             var notify = this.notify;
 
             //on success
@@ -56,9 +55,9 @@ module App.Services {
             return defer.promise;
         }
 
-        put<T>(url: string, data: {}):ng.IPromise<T> {
+        put<T>(url: string, data: {}, config: {}):ng.IPromise<T> {
             var defer = this.Q.defer<T>();
-            var putData = this.http.put<T>(url, data);
+            var putData = this.http.put<T>(url, data, config);
             var notify = this.notify;
 
             putData.then(response => {
@@ -75,10 +74,10 @@ module App.Services {
             return defer.promise;
         }
 
-        delete<T>(url: string) {
+        delete<T>(url: string, config: {}) {
 
             var defer = this.Q.defer<T>();
-            var deleteData = this.http.delete<T>(url);
+            var deleteData = this.http.delete<T>(url, config);
             var notify = this.notify;
 
             //on success
