@@ -25,8 +25,8 @@ module App.Controllers {
             this.http.post('/api/v1/auth/register', user).then(response => {
 
                 if(response.status === 201) {
-                    this.state.go('login');
                     this.notify.success('Successfully Registered');
+                    setTimeout(() => {this.state.go('login');}, 4000)
                 }
             })
             .catch(error => {
@@ -63,7 +63,9 @@ module App.Controllers {
                         this.notify.success('successfully logged in');
                         this.storage.store('token', token);
 
-                        window.location.href = '/';
+                        setTimeout(() => {  window.location.href = '/';}, 1000)
+
+
                     }
                 })
                 .catch(error => {

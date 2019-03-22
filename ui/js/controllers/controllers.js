@@ -18,8 +18,8 @@ var App;
                 }
                 this.http.post('/api/v1/auth/register', user).then(function (response) {
                     if (response.status === 201) {
-                        _this.state.go('login');
                         _this.notify.success('Successfully Registered');
+                        setTimeout(function () { _this.state.go('login'); }, 4000);
                     }
                 })
                     .catch(function (error) {
@@ -44,7 +44,7 @@ var App;
                         var token = response.data.token;
                         _this.notify.success('successfully logged in');
                         _this.storage.store('token', token);
-                        window.location.href = '/';
+                        setTimeout(function () { window.location.href = '/'; }, 1000);
                     }
                 })
                     .catch(function (error) {

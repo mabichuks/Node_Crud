@@ -17,7 +17,7 @@
           </thead>
           <tbody>
             <tr ng-repeat="employee in model.employees">
-              <td>{{ model.employees.indexOf(employee) + 1 }}</td>
+              <td>{{ $index + 1 }}</td>
               <td>{{ employee.name }}</td>
               <td>{{ employee.designation }}</td>
               <td>{{ employee.Company.name }}</td>

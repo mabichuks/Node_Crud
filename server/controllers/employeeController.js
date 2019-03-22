@@ -2,7 +2,7 @@ import Model from "../models";
 
 const debug = require("debug")("app:app.employeeCOntroller");
 const { Employee } = Model;
-const {Company} = Model;
+const { Company } = Model;
 
 export default class EmployeeController {
   static addEmployee(req, res) {
@@ -28,7 +28,7 @@ export default class EmployeeController {
   }
 
   static getAll(req, res) {
-    Employee.findAll({ include: [{model: Company}] })
+    Employee.findAll({ include: [{ model: Company }] })
       .then(result => {
         if (!result) {
           return res.status(204).json({
@@ -67,7 +67,7 @@ export default class EmployeeController {
   }
 
   static delete(req, res) {
-    Employee.destroy({where: {id: req.params.id}}).then(deletedStatus => {
+    Employee.destroy({ where: { id: req.params.id } }).then(deletedStatus => {
       if (!deletedStatus) {
         return res.status(400).json({
           message: "Employee Not found"
@@ -82,23 +82,28 @@ export default class EmployeeController {
   }
 
   static getSingle(req, res) {
-    Employee.findById(req.params.id, {include: [{model: Company}]}).then(result => {
-      if (!result) {
-        return res.status(400).json({
-          message: "Not found"
+    Employee.findById(req.params.id, { include: [{ model: Company }] }).then(
+      result => {
+        if (!result) {
+          return res.status(400).json({
+            message: "Not found"
+          });
+        }
+
+        return res.status(200).json({
+          result
         });
       }
-
-      return res.status(200).json({
-        result
-      });
-    });
+    );
   }
 
   static getByCompany(req, res) {
     const companyId = req.params.id;
 
-    Employee.findAll({ where: { companyId: companyId }, include: [{model: Company}] })
+    Employee.findAll({
+      where: { companyId: companyId },
+      include: [{ model: Company }]
+    })
       .then(result => {
         if (!result) {
           return res.status(204).json({
